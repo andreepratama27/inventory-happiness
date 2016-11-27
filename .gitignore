@@ -1,0 +1,11 @@
+# node
+node_modules
+
+# Environment
+.env
+
+public/js
+public/fonts
+public/css
+
+yarn-error.log
