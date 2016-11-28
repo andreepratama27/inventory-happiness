@@ -10,8 +10,9 @@ const mongoUrl = process.env.MONGODB_URL
 
 mongoose.Promise = global.Promise
 
-router.post('/api/product', ProductCtrl.getUser)
-
 mongoose.connect(mongoUrl);
+
+
+router.post('/api/product', ProductCtrl.getUser)
 
 module.exports  = router
