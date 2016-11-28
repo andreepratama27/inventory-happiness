@@ -1,0 +1,26 @@
+var Table = require('cli-table');
+const r = require('./app/routes/api')
+ 
+// instantiate 
+var table = new Table({
+    head: ['Method', 'Path']
+  , colWidths: [20, 40]
+});
+
+//var a;
+/*a = r.stack.map(function(x){
+	return x.route.path
+})*/
+
+console.log(r.stack[0].route.stack[0].handle.name)
+
+r.stack.forEach(function(x){
+	const uri = x.route.path
+	const method = Object.keys(x.route.methods)[0].toUpperCase()
+	table.push([method, uri])
+})
+/*console.log(r.stack[0].route.path)
+console.log(a)*/
+
+console.log(table.toString());
+process.exit()
