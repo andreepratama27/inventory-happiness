@@ -1,14 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-
-/*List Component*/
-
-import Navbar from './GlobalComponents/Navbar'
-import HomeSass from '../sass/home.scss'
-
-import $ from 'jquery'
-
 class Home extends React.Component {
 
 	render() {

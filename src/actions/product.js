@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, DELETE_PRODUCT } from '../constants'
+import { ADD_PRODUCT, DELETE_PRODUCT, INITIAL_PRODUCT } from '../constants'
 
 export function addproduct(n) {
   return {
@@ -12,4 +12,11 @@ export function decrease(n) {
     type: DELETE_PRODUCT,
     amount: n
   }
+}
+
+export function initialproduct(n){
+	return {
+		type: INITIAL_PRODUCT,
+		payload: n
+	}
 }

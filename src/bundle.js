@@ -2,6 +2,7 @@
 import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios'
 
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -39,6 +40,9 @@ class Home extends React.Component {
 }
 
 class RouterHome extends React.Component {
+  componentDidMount(){
+    console.log("sdfalskfjld")
+  }
   render() {
     return (
       <Provider store={store}>

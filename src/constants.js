@@ -2,3 +2,4 @@ export const INCREASE = 'INCREASE';
 export const DECREASE = 'DECREASE';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const INITIAL_PRODUCT = 'INITIAL_PRODUCT'

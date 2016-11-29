@@ -1,16 +1,11 @@
-var Table = require('cli-table');
+/*var Table = require('cli-table');
 const r = require('./app/routes/api')
  
 // instantiate 
-var table = new Table({
+  var table = new Table({
     head: ['Method', 'Path']
   , colWidths: [20, 40]
 });
-
-//var a;
-/*a = r.stack.map(function(x){
-	return x.route.path
-})*/
 
 console.log(r.stack[0].route.stack[0].handle.name)
 
@@ -19,8 +14,26 @@ r.stack.forEach(function(x){
 	const method = Object.keys(x.route.methods)[0].toUpperCase()
 	table.push([method, uri])
 })
-/*console.log(r.stack[0].route.path)
-console.log(a)*/
+
 
 console.log(table.toString());
-process.exit()
+process.exit()*/
+
+var program = require('commander');
+
+var install = function(){}
+ 
+program
+  .version('0.0.1')
+  .command('rmdir <dir> [otherDirs...]')
+  .action(function (dir, otherDirs) {
+    console.log('rmdir %s', dir);
+    if (otherDirs) {
+      otherDirs.forEach(function (oDir) {
+        console.log('rmdir %s', oDir);
+      });
+    }
+  });
+ 
+program.parse(process.argv);
+

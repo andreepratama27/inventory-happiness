@@ -12,6 +12,21 @@ class Product {
 		})
 	}
 
+	show(req, res){
+
+		const code = req.params.id
+
+		ProductSchema.find({code}).then(function(result){
+			return res.status(200).json(result);
+		})
+	}
+
+
+	update(req, res){
+
+		
+	}
+
 	store(req, res) {
 		
 		const productSchema = new ProductSchema({

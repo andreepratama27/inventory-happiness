@@ -10,10 +10,15 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
     "cli-table": "^0.3.1",
+    "commander": "^2.9.0",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-15",
+    "mocha": "^3.2.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "supertest": "^2.0.1",
     "vhost": "^3.0.2",
     "webpack": "^1.13.3"
   },
@@ -35,6 +40,7 @@
   },
   "scripts": {
     "dev": "nodemon --watch public --watch app -x node server.js",
-    "babel-node": "babel-node --presets=es2015"
+    "babel-node": "babel-node --presets=es2015",
+    "test": "mocha"
   }
 }
