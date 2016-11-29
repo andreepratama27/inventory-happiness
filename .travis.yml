@@ -7,9 +7,12 @@ node_js:
 
 services:
   - mongodb
-
+env:
+  - DBTRAVIS=postgres
+  
 before_script:
   - npm install -g gulp
-  - npm test
 
-script: gulp
+script: 
+  - gulp
+  - npm test
