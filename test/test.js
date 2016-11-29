@@ -1,4 +1,4 @@
-var assert = require('assert');
+var assert = require('assert')
 var request = require('supertest');
 var express = require('express');
 const webRouter = require('../app/routes/web')

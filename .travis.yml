@@ -10,5 +10,6 @@ services:
 
 before_script:
   - npm install -g gulp
+  - npm test
 
 script: gulp
