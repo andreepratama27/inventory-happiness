@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const ProductCtrl = require('../controllers/Product');
 
-
+router.get('/nipe', ProductCtrl.index)
 router.get('/api/product', ProductCtrl.index)
 router.post('/api/product', ProductCtrl.store)
 router.get('/api/product/:id', ProductCtrl.show)

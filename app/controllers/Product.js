@@ -6,7 +6,7 @@ const ProductSchema = require('../schema/Product')
 class Product {
 
 	index(req, res) {
-
+		
 		ProductSchema.find({}).then(function(data){
 			return res.status(200).json(data)
 		})

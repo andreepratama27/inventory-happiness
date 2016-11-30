@@ -8,9 +8,11 @@ node_js:
 services:
   - mongodb
 env:
-  - DBTRAVIS=postgres
+  - DBTRAVIS=travis
   
 before_script:
+  - sleep 15
+  - mongo imk
   - npm install -g gulp
 
 script: 
