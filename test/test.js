@@ -15,7 +15,7 @@ app.set('view engine', 'ejs')
 
 mongoose.Promise = global.Promise
 
-let mongoUrl = ""
+var mongoUrl = ""
 
 var agent = request.agent(app);
 
@@ -27,18 +27,18 @@ if (process.env.DBTRAVIS == 'travis') {
 
 mongoose.connect(mongoUrl)
 
-describe('GET Web Route', function() {
-  it('get index page', function(done) {
+describe('Web Page', function() {
+  it('visit home page', function(done) {
     request(app)
       .get('/')
       .expect(200, done);
   })
-  it('get login page', function(done){
+  it('visit login page', function(done){
   	request(app)
       .get('/login')
       .expect(200, done);
   })
-  it('get hoax page', function(done){
+  it('visit hoax page', function(done){
     request(app)
       .get('/hoaxer')
       .expect(404, done);
