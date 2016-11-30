@@ -6,7 +6,7 @@ node_js:
   - "4.4"
 
 services:
-  - mongodb
+  - mongodb imk --eval 'db.hostInfo()'
 env:
   - DBTRAVIS=travis
   
