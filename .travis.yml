@@ -6,13 +6,13 @@ node_js:
   - "4.4"
 
 services:
-  - mongodb imk --eval 'db.hostInfo()'
+  - mongodb
 env:
   - DBTRAVIS=travis
   
 before_script:
-  - sleep 15
-  - mongo imk
+  - sleep 5
+  - mongo imk --eval 'db.hostInfo()'
   - npm install -g gulp
 
 script: 
