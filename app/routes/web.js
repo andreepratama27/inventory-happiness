@@ -15,6 +15,11 @@ router.get('/login', function(req, res){
 router.get('/product', function(req, res){
 	res.render('index')
 })
+
+router.get('/product/edit/:id', function(req, res){
+	res.render('index')
+})
+
 router.get('/product/add', function(req, res){
 	res.render('index')
 })

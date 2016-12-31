@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 
 export default class Navbar extends React.Component {
@@ -7,19 +8,35 @@ export default class Navbar extends React.Component {
 	render() {
 
 		return (
-				<div className="navbarContainer">
-					
-					<div className="sideContainer">
-
-						<div className="brandFlex">
-							div 1
-						</div>
-						<div className="menuRight">
-							div 2
-						</div>
+				
+				<header id="dewa" >
+					<div className="col-lg-4 col-md-4 col-sm-4 logoBox">
+						
+						<Link to={`/`} id="logo">
+							<span>Inventory</span>
+						</Link>
 
 					</div>
-				</div>
+					<div className="col-lg-8 col-md-8 col-sm-8">
+
+						<ul className="dewaMenu">
+
+							<li className="item">
+								<Link to={`/`}>
+									Home
+								</Link>
+							</li>
+							<li className="item">
+
+								<Link to={`/product`}>
+									Product
+								</Link>
+
+							</li>
+						</ul>
+					</div>
+					<div className="clearfix"></div>
+				</header>
 			)
 	}
 }

@@ -24,6 +24,28 @@ class Product {
 
 	update(req, res){
 
+		const data = {
+			name: req.body.name,
+			code: req.body.code
+		}
+		
+		let result = new Promise((resolve, reject) => {
+
+			ProductSchema.findOneAndUpdate({_id: req.body._id}, data, function(err, product){
+
+				if (err) {
+					reject(true)
+				}
+
+				resolve(product)
+
+			})
+		})
+
+		result.then(x => {
+
+			res.status(200).json(x)
+		})
 		
 	}
 

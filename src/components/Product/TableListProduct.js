@@ -38,8 +38,6 @@ class TableListProduct extends React.Component {
 		    	<Link to={`/product/add`}>
 		    		<button className="btn btn-primary no-border">Add Product</button>
 		    	</Link>
-		    	<Link to={`/`}>Home</Link>
-
 
 		    	<table className="list-products">
 			    	<thead>
@@ -61,7 +59,11 @@ class TableListProduct extends React.Component {
 			    					<td>{t.name}</td>
 			    					<td>0</td>
 			    					<td>{formatTanggal(t.created_at)}</td>
-			    					<td>Edit</td>
+			    					<td>
+										<Link to={`/product/edit/` + t._id}>
+								    		<button className="antd-button-danger no-border">Edit</button>
+								    	</Link>
+			    					</td>
 			    					<td>
 			    						<button className="antd-button-danger" 
 			    						onClick={this.nipeharefa.bind(this, t)}>Delete</button>

@@ -11,10 +11,12 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import * as reducerCollection from './reducers';
 
-import Product from './product'
+import Product from './scenes/ListProduct'
 
 /*Scnes*/
 import AddProduct from './scenes/AddProduct'
+import EditProduct from './scenes/EditProduct'
+import Home from './scenes/Home'
 
 
 const reducer = combineReducers({ ...reducerCollection,
@@ -25,24 +27,7 @@ const store = createStore(
 );
 const history = syncHistoryWithStore(browserHistory, store);
 
-class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = { name: 'Seasdt Stas' };
-  }
-  render() {
-    return (
-      <div className="container">
-        <h1>laskdfjaslkfjskdf</h1>
-      </div>
-    );
-  }
-}
-
 class RouterHome extends React.Component {
-  componentDidMount(){
-    console.log("sdfalskfjld")
-  }
   render() {
     return (
       <Provider store={store}>
@@ -50,6 +35,7 @@ class RouterHome extends React.Component {
           <Route path="/" component={Home} />
           <Route path="/product" component={Product} />
           <Route path="/product/add" component={AddProduct} />
+          <Route path="/product/edit/:id" component={EditProduct} />
         </Router>
       </Provider>
     );
