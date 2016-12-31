@@ -35,12 +35,25 @@ class Product {
 		})
 
 		productSchema.save().then(function(param){
-			return res.json(param)
+			return res.status(201).json(param)
 		})
 	}
 
 	destroy(req, res) {
-		return res.status(204).json([])
+		const id = req.params.id
+
+		const hasil = new Promise(function(resolve, reject){
+
+			ProductSchema.findOneAndRemove({'_id': id}, function(){
+				resolve(true)
+			})
+		})
+
+		
+		return hasil.then(function(){
+
+			return res.status(204).json([])
+		})
 	}
 }
 

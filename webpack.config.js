@@ -18,5 +18,8 @@ module.exports = {
         loader  : 'babel'
 		  },
 		]
-	}
+	},
+	babel: {
+      compact: false
+    }
 }

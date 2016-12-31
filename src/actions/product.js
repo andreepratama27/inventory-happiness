@@ -7,6 +7,13 @@ export function addproduct(n) {
   }
 }
 
+export function deleteProduct(n) {
+  return {
+    type: DELETE_PRODUCT,
+    payload: n
+  }
+}
+
 export function decrease(n) {
   return {
     type: DELETE_PRODUCT,

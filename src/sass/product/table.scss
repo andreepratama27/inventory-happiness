@@ -1,0 +1,26 @@
+.list-products {
+
+	width: 100%;
+	margin-top: 1.2rem;
+
+	& tr {
+
+		transition: all .3s ease;
+
+		& th {
+			background: #f7f7f7;
+			font-weight: bold;
+			text-align: left;
+			transition: background .3s ease;
+			padding: 16px 8px;
+			word-break: break-all;
+		}
+
+
+		& td {
+			
+			padding: 16px 8px;
+			word-break: break-all;
+		}
+	}
+}

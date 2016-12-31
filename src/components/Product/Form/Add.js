@@ -55,40 +55,42 @@ class AddForm extends React.Component {
 		return (
 			<div className="formAddProduct">
 				<div className="form-group">
-					<input type="text" placeholder="Code" className="form-control" 
+					<label>Kode Produk</label>
+					<input type="text" placeholder="0123456789" className="form-control no-border" 
 						value={this.state.code} 
 						onChange={this.handleCodeChange.bind(this)}/>
 				</div>
 				<div className="form-group">
-					<input type="text" placeholder="Product Name" 
-					className="form-control" value={this.state.name}
+					<label>Nama Produk</label>
+					<input type="text" placeholder="Remote Lorem Foo" 
+					className="form-control no-border" value={this.state.name}
 					onChange={this.handleNameChange.bind(this)}/>
 				</div>
 				<div className="form-group">
-					<input type="text" className="form-control" placeholder="Quantity"
+					<label>Quantity</label>
+					<input type="text" className="form-control no-border" placeholder="1"
 					value={this.state.quantity}
 					onChange={this.handleQuantityChange.bind(this)}/>
 				</div>
 
 				<div className="form-group">
-					<label htmlFor="input" className="col-sm-2 control-label">Category</label>
-					<div className="col-sm-2">
-						<select name="" id="input" className="form-control"
-							onChange={this.handleCategoryChange.bind(this)}>
-							<option value=""></option>
-							<option value="1100">Food</option>
-						</select>
-					</div>
+					<label>Category</label>
+					<select name="" id="input" className="form-control no-border"
+						onChange={this.handleCategoryChange.bind(this)}>
+						<option value="">Pilih Kategori</option>
+						<option value="1100">Food</option>
+					</select>
 				</div>
 
 				<div className="form-group">
-					<textarea className="form-control" placeholder="Note"
+					<label>Catatan</label>
+					<textarea className="form-control no-border" placeholder="Note"
 						onChange={this.handleNoteChange.bind(this)}></textarea>
 				</div>
 
 				<div className="form-group">
 					<button type="button" className="btn btn-info"
-						onClick={this.handleSubmit.bind(this)}>button</button>
+						onClick={this.handleSubmit.bind(this)}>Tambah</button>
 					<Link to={`/product`}>
 						<button type="button" className="btn btn-warning">Kembali</button>
 					</Link>

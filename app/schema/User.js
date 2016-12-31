@@ -6,11 +6,6 @@ var userSchema = new Schema({
 	name: String,
 	email: String,
 	password: String,
-	local            : {
-		name		 : String,
-        email        : String,
-        password     : String,
-    },
 });
 
 
