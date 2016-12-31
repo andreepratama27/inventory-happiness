@@ -26,6 +26,7 @@ export default class Navbar extends React.Component {
 									Home
 								</Link>
 							</li>
+							
 							<li className="item">
 
 								<Link to={`/product`}>
@@ -33,6 +34,23 @@ export default class Navbar extends React.Component {
 								</Link>
 
 							</li>
+
+							<li className="item">
+
+								<Link to={`/product`}>
+									Supplier
+								</Link>
+
+							</li>
+
+							<li className="item">
+
+								<Link to={`/product`}>
+									Transaksi
+								</Link>
+
+							</li>
+
 						</ul>
 					</div>
 					<div className="clearfix"></div>

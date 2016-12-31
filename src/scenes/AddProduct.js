@@ -1,16 +1,20 @@
 import React from 'react'
 import AddForm from '../components/Product/Form/Add'
+import Navbar from '../components/Global/Navbar'
 
 export default class AddProduct extends React.Component{
 
 	render(){
 
 		return (
-			<div className="container">
-				add Product
+			<div>
+				<Navbar />
+				<div className="container">
+					add Product
 
-				<div className="col-md-6">
-					<AddForm />
+					<div className="col-md-6">
+						<AddForm />
+					</div>
 				</div>
 			</div>
 		)

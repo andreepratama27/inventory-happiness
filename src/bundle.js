@@ -17,6 +17,7 @@ import Product from './scenes/ListProduct'
 import AddProduct from './scenes/AddProduct'
 import EditProduct from './scenes/EditProduct'
 import Home from './scenes/Home'
+import AddSuppliers from './scenes/AddSuppliers'
 
 
 const reducer = combineReducers({ ...reducerCollection,
@@ -36,6 +37,7 @@ class RouterHome extends React.Component {
           <Route path="/product" component={Product} />
           <Route path="/product/add" component={AddProduct} />
           <Route path="/product/edit/:id" component={EditProduct} />
+          <Route path="/suppliers/create" component={AddSuppliers} />
         </Router>
       </Provider>
     );

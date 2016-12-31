@@ -24,4 +24,20 @@ router.get('/product/add', function(req, res){
 	res.render('index')
 })
 
+
+router.get('/suppliers', function(req, res){
+
+	res.render('index')
+})
+
+router.get('/suppliers/create', function(req, res){
+
+	res.render('index')
+})
+
+router.get('/suppliers/edit/:id', function(req, res){
+
+	res.render('index')
+})
+
 module.exports = router

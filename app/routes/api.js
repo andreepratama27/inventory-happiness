@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const ProductCtrl = require('../controllers/Product');
 const RegisterCtrl = require('../controllers/Register');
+const Suppliers = require('../controllers/Suppliers');
 
 router.post('/api/register', RegisterCtrl.register);
 
@@ -10,5 +11,6 @@ router.post('/api/product', ProductCtrl.store)
 router.get('/api/product/:id', ProductCtrl.show)
 router.put('/api/product/:id', ProductCtrl.update)
 router.delete('/api/product/:id', ProductCtrl.destroy)
+
 
 module.exports  = router
