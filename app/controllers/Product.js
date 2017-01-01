@@ -8,7 +8,7 @@ class Product {
 
 	index(req, res) {
 		
-		ProductSchema.find({}).populate('supplier').then(function(data){
+		ProductSchema.find({}).populate(['supplier']).then(function(data){
 			return res.status(200).json(data)
 		})
 	}

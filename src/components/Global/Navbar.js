@@ -45,7 +45,7 @@ export default class Navbar extends React.Component {
 
 							<li className="item">
 
-								<Link to={`/product`}>
+								<Link to={`/transaksi`}>
 									Transaksi
 								</Link>
 
