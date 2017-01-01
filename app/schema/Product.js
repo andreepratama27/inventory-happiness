@@ -4,7 +4,9 @@ const Schema = mongoose.Schema
 var productScema = new Schema({
 	code: String,
 	name: String,
-	supplier : [{ type: Schema.Types.ObjectId, ref: 'Suppliers' }]
+	quantity: Number,
+	note: String,
+	supplier : { type: Schema.Types.ObjectId, ref: 'Suppliers' }
 	
 }, { timestamps: { createdAt: 'created_at' } });
 

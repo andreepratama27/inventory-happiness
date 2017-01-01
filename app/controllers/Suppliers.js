@@ -8,6 +8,9 @@ class Suppliers {
 
 	index(req, res) {
 		
+		SupplierSchema.find({}).then(function(data){
+			return res.status(200).json(data)
+		})
 		
 	}
 

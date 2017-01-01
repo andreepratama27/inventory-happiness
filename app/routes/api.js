@@ -15,5 +15,6 @@ router.delete('/api/product/:id', ProductCtrl.destroy)
 
 
 router.post('/api/suppliers', Suppliers.store)
+router.get('/api/suppliers', Suppliers.index)
 
 module.exports  = router

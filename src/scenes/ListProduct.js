@@ -11,15 +11,13 @@ class Product extends React.Component {
 	constructor() {
     	super();
   	}
-  	componentWillMount(){
-  		console.log("fladfk")
-  	}
   	componentDidMount(){
   		const self = this
   		axios.get('api/product').then((result) => {
   			const a = List(result.data)
   			self.props.initialproduct(a)
   		})
+
   	}
 	render() {
 		return (

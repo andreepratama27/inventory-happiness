@@ -77,8 +77,10 @@ class AddForm extends React.Component {
 					<label>Category</label>
 					<select name="" id="input" className="form-control no-border"
 						onChange={this.handleCategoryChange.bind(this)}>
-						<option value="">Pilih Kategori</option>
-						<option value="1100">Food</option>
+						<option value="">Pilih Suppliers</option>
+						{this.props.suppliers.map(t => {
+			    			return (<option key={t._id}>{t.name}</option>)
+			    		})}
 					</select>
 				</div>
 
@@ -101,4 +103,4 @@ class AddForm extends React.Component {
 	}
 }
 
-export default connect(state => ({ user: state }), { addproduct })(AddForm);
+export default connect(state => ({ user: state, suppliers: state.suppliers }), { addproduct })(AddForm);

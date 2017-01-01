@@ -46,6 +46,7 @@ class TableListProduct extends React.Component {
 			            <th>Name</th>
 			            <th>Category</th>
 			            <th>Quantity</th>
+			            <th>Company</th>
 			            <th>Last Update</th>
 			            <th></th>
 			            <th></th>
@@ -58,6 +59,7 @@ class TableListProduct extends React.Component {
 			    					<td>{t.name}</td>
 			    					<td>{t.name}</td>
 			    					<td>0</td>
+			    					<td>{t.supplier.name}</td>
 			    					<td>{formatTanggal(t.created_at)}</td>
 			    					<td>
 										<Link to={`/product/edit/` + t._id}>

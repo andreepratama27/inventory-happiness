@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
+import { List, Map } from 'immutable'
+
 import * as reducerCollection from './reducers';
 
 import Product from './scenes/ListProduct'
@@ -18,6 +20,7 @@ import AddProduct from './scenes/AddProduct'
 import EditProduct from './scenes/EditProduct'
 import Home from './scenes/Home'
 import AddSuppliers from './scenes/AddSuppliers'
+import ListSuppliers from './scenes/ListSuppliers'
 
 
 const reducer = combineReducers({ ...reducerCollection,
@@ -29,6 +32,22 @@ const store = createStore(
 const history = syncHistoryWithStore(browserHistory, store);
 
 class RouterHome extends React.Component {
+  constructor() {
+      super();
+  }
+  componentDidMount() {
+
+      const _store = store
+      axios.get('/api/suppliers').then((result) => {
+        const a = List([])
+      
+        _store.dispatch({
+          type: 'INITIAL_SUPPLIER',
+          payload: result.data
+        });
+
+      })
+  }
   render() {
     return (
       <Provider store={store}>
@@ -37,6 +56,7 @@ class RouterHome extends React.Component {
           <Route path="/product" component={Product} />
           <Route path="/product/add" component={AddProduct} />
           <Route path="/product/edit/:id" component={EditProduct} />
+          <Route path="/suppliers" component={ListSuppliers} />
           <Route path="/suppliers/create" component={AddSuppliers} />
         </Router>
       </Provider>

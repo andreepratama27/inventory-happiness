@@ -37,8 +37,8 @@ export default class Navbar extends React.Component {
 
 							<li className="item">
 
-								<Link to={`/product`}>
-									Supplier
+								<Link to={`/suppliers`}>
+									Suppliers
 								</Link>
 
 							</li>
