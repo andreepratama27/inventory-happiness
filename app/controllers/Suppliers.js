@@ -2,6 +2,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ProductSchema = require('../schema/Product')
+const SupplierSchema = require('../schema/Supplier')
 
 class Suppliers {
 
@@ -22,6 +23,16 @@ class Suppliers {
 
 	store(req, res) {
 		
+
+		const supplierSchema = new SupplierSchema({
+			code: req.body.code,
+			name: req.body.name
+		})
+
+
+		supplierSchema.save().then(function(param){
+			return res.status(201).json(param)
+		})
 		
 	}
 

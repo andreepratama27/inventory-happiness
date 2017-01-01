@@ -13,4 +13,7 @@ router.put('/api/product/:id', ProductCtrl.update)
 router.delete('/api/product/:id', ProductCtrl.destroy)
 
 
+
+router.post('/api/suppliers', Suppliers.store)
+
 module.exports  = router

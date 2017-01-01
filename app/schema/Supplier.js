@@ -6,5 +6,5 @@ var supplierSchema = new Schema({
 	code: String
 }, { timestamps: { createdAt: 'created_at' } });
 
-var Product = mongoose.model('Suppliers', productScema);
+var Product = mongoose.model('Suppliers', supplierSchema);
 module.exports = Product

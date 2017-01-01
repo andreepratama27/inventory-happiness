@@ -7,7 +7,7 @@ class Product {
 
 	index(req, res) {
 		
-		ProductSchema.find({}).then(function(data){
+		ProductSchema.find({}).populate('supplier').then(function(data){
 			return res.status(200).json(data)
 		})
 	}
@@ -53,7 +53,8 @@ class Product {
 		
 		const productSchema = new ProductSchema({
 			code: req.body.code,
-			name: req.body.name
+			name: req.body.name,
+			supplier: req.body.supplier
 		})
 
 		productSchema.save().then(function(param){
