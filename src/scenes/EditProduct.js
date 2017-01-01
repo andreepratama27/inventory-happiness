@@ -10,7 +10,7 @@ export default class AddProduct extends React.Component{
 				add Product
 
 				<div className="col-md-6">
-					<EditForm />
+					<EditForm id={this.props.params.id}/>
 				</div>
 			</div>
 		)

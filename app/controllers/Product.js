@@ -54,11 +54,15 @@ class Product {
 		const productSchema = new ProductSchema({
 			code: req.body.code,
 			name: req.body.name,
+			quantity: req.body.quantity,
+			note: req.body.note,
 			supplier: req.body.supplier
 		})
 
 		productSchema.save().then(function(param){
-			return res.status(201).json(param)
+			param.populate('supplier', function(err) {
+			 	return res.status(201).json(param)
+			})
 		})
 	}
 

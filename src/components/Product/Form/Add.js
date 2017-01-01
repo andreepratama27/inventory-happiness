@@ -39,15 +39,17 @@ class AddForm extends React.Component {
 		const res = {
 			id: Math.random(),
 			code: this.state.code,
-			name: this.state.name
+			name: this.state.name,
+			supplier: this.state.category,
+			quantity: this.state.quantity,
+			note: this.state.note,
 		}
 		
-		this.props.addproduct(res)
-		browserHistory.push('/product')
 
+		const self = this
 		axios.post('/api/product', res)
 			.then((result) => {
-				console.log(result)
+				browserHistory.push('/product')
 			})
 	}
 	render(){
@@ -79,7 +81,7 @@ class AddForm extends React.Component {
 						onChange={this.handleCategoryChange.bind(this)}>
 						<option value="">Pilih Suppliers</option>
 						{this.props.suppliers.map(t => {
-			    			return (<option key={t._id}>{t.name}</option>)
+			    			return (<option key={t._id} value={t._id}>{t.name}</option>)
 			    		})}
 					</select>
 				</div>

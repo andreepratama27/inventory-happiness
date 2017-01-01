@@ -11,10 +11,6 @@ class ListSuppliers extends React.Component {
 	constructor(props) {
 		super(props)
 	}
-
-	componentDidMount(){
-		console.log(this.props)
-	}
 	nipeharefa(t) {
 
 		const id = t._id
@@ -29,13 +25,7 @@ class ListSuppliers extends React.Component {
 	}
 	render () {
 		const formatTanggal = x => {
-			console.log(x)
 			return moment(x,moment.ISO_8601).format('DD MMM YYYY H:m:s')
-		}
-
-		const hapus = x => {
-
-			console.log(x)
 		}
 		return (
 			<div>

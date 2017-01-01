@@ -3,3 +3,16 @@
 
 @import "./product/table";
 @import "./__global";
+
+
+div.boxActivity {
+
+
+
+	& div.boxTitle {
+		border-top-right-radius: 0.3rem;
+		border-top-left-radius: 0.3rem;
+		background: #e2dfdf;
+		padding: 1rem;
+	}
+}

@@ -13,10 +13,12 @@ class EditForm extends React.Component {
 		super(props)
 
 		let data = this.props.todos
+
+		const id = this.props.id
 		
 		var res = data.find(obj => {
 
-			return obj._id === '58672e2512efda46b94981ac'
+			return obj._id === id
 
 		})
 

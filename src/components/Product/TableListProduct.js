@@ -25,7 +25,6 @@ class TableListProduct extends React.Component {
 	}
 	render () {
 		const formatTanggal = x => {
-			console.log(x)
 			return moment(x,moment.ISO_8601).format('DD MMM YYYY H:m:s')
 		}
 
@@ -44,7 +43,6 @@ class TableListProduct extends React.Component {
 			          <tr>
 			            <th>Code</th>
 			            <th>Name</th>
-			            <th>Category</th>
 			            <th>Quantity</th>
 			            <th>Company</th>
 			            <th>Last Update</th>
@@ -57,8 +55,7 @@ class TableListProduct extends React.Component {
 			    			return (<tr key={t._id}>
 			    					<td>{t.code}</td>
 			    					<td>{t.name}</td>
-			    					<td>{t.name}</td>
-			    					<td>0</td>
+			    					<td>{t.quantity}</td>
 			    					<td>{t.supplier.name}</td>
 			    					<td>{formatTanggal(t.created_at)}</td>
 			    					<td>
