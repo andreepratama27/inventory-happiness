@@ -2,6 +2,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ProductSchema = require('../schema/Product')
+const TransactionSchema = require('../schema/Transaction')
 
 class Product {
 
@@ -59,10 +60,30 @@ class Product {
 			supplier: req.body.supplier
 		})
 
-		productSchema.save().then(function(param){
-			param.populate('supplier', function(err) {
-			 	return res.status(201).json(param)
+
+		const createTrans = function (productID, SupplierID)  {
+
+			const trans = new TransactionSchema({
+				code: 111,
+				type: 1, // 1 Masuk, 2 => Keluar
+				note: "Stock Awal",
+				quantity: req.body.quantity,
+				supplier : SupplierID,
+				product : productID,
 			})
+
+			trans.save().then(function(results){
+				results.populate('product', function(){
+
+					return res.status(201).json(results)
+				})
+			})
+		}
+
+		productSchema.save().then(function(param){
+			createTrans(param._id, req.body.supplier)
+			/*param.populate('supplier', function(err) {
+			})*/
 		})
 	}
 
