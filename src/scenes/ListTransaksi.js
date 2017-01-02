@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Navbar from '../components/Global/Navbar'
+import TableTransaksi from '../components/Transaksi/TableTransaksi'
 
 
 class ListTransaksi extends React.Component {
@@ -14,7 +15,7 @@ class ListTransaksi extends React.Component {
         <Navbar />
   			<div className="container">
   				<div className="listProduct">
-
+            <TableTransaksi />
   				</div>
   			</div>
 
