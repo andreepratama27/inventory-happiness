@@ -22,14 +22,14 @@ class TableTransaksi extends React.Component {
 		return (
 			<div className="table-list">
 		    	<Link to={`/product/add`}>
-		    		<button className="btn btn-primary no-border">Add Product</button>
+		    		<button className="btn btn-primary no-border">Tambah Transaksi</button>
 		    	</Link>
 
 		    	<table className="list-products">
 			    	<thead>
 			          <tr>
-			            <th>Code</th>
-			            <th>Product</th>
+			            <th>Kode Transaksi</th>
+			            <th>Nama Product</th>
 			            <th>Supplier</th>
 			            <th>Tipe</th>
 			            <th>Quantitty</th>
