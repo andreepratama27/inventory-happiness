@@ -21,7 +21,7 @@ class TableTransaksi extends React.Component {
 		}
 		return (
 			<div className="table-list">
-		    	<Link to={`/product/add`}>
+		    	<Link to={`/transaksi/create`}>
 		    		<button className="btn btn-primary no-border">Tambah Transaksi</button>
 		    	</Link>
 

@@ -24,3 +24,23 @@ div.table-list {
 		margin-top: 1rem;
 	}
 }
+
+
+
+.warn-stock {
+
+	background: red;
+}
+
+.hideNotification {
+	display: none;
+}
+
+.displayNotification {
+	display: block;
+}
+.notifError {
+	font-size: 0.8rem;
+	color:red;
+	font-weight: bold;
+}

@@ -19,5 +19,6 @@ router.post('/api/suppliers', Suppliers.store)
 router.get('/api/suppliers', Suppliers.index)
 
 router.get('/api/transaction', Transaction.index)
+router.post('/api/transaction', Transaction.store)
 
 module.exports  = router
