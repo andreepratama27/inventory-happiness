@@ -33,7 +33,7 @@ class TableListProduct extends React.Component {
 			console.log(x)
 		}
 		return (
-			<div>
+			<div className="table-list">
 		    	<Link to={`/product/add`}>
 		    		<button className="btn btn-primary no-border">Add Product</button>
 		    	</Link>

@@ -48,6 +48,13 @@ class RouterHome extends React.Component {
         });
 
       })
+
+      axios.get('/api/transaction').then( result => {
+        _store.dispatch({
+          type: 'INITIAL_TRANSAKSI',
+          payload: result.data
+        })
+      })
   }
   render() {
     return (

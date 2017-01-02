@@ -13,7 +13,6 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo')(session);
 
-
 const configDB = require('./config/database.js');
 
 mongoose.Promise = global.Promise

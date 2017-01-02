@@ -7,11 +7,13 @@ node_js:
 
 services:
   - mongodb
+cache: yarn
 env:
   - DBTRAVIS=travis
   
 before_script:
   - sleep 5
+  - yarn
   - mongo imk --eval 'db.hostInfo()'
   - npm install -g gulp
 
