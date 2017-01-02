@@ -1,9 +1,15 @@
-import { ADD_SUPPLIER, DELETE_SUPPLIER, INITIAL_SUPPLIER } from '../constants'
+import { ADD_TRANSAKSI, INITIAL_TRANSAKSI } from '../constants'
 
 
-export function intialSupplier(n){
+export function initTransaksi(n){
 	return {
-		type: INITIAL_SUPPLIER,
+		type: INITIAL_TRANSAKSI,
 		payload: n
 	}
+}
+export function addTransaksi(n) {
+  return {
+    type: ADD_TRANSAKSI,
+    payload: n
+  }
 }

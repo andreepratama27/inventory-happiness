@@ -6,7 +6,7 @@ var productScema = new Schema({
 	name: String,
 	quantity: Number,
 	note: String,
-	supplier : { type: Schema.Types.ObjectId, ref: 'Suppliers' }
+	supplier : { type: Schema.Types.ObjectId, ref: 'Suppliers' },
 	
 }, { timestamps: { createdAt: 'created_at' } });
 

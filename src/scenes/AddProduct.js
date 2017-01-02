@@ -10,7 +10,6 @@ export default class AddProduct extends React.Component{
 			<div>
 				<Navbar />
 				<div className="container">
-					add Product
 
 					<div className="col-md-6">
 						<AddForm />

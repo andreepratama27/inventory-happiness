@@ -3,6 +3,10 @@ import axios from 'axios'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import { List, Map } from 'immutable';
+
+
+import { addTransaksi as tambahTransaksi } from 'actions/transaksi'
 
 
 class AddTransaksi extends React.Component {
@@ -59,9 +63,11 @@ class AddTransaksi extends React.Component {
 			supplier: this.state.supplier
 		}
 
-		
+		const self = this
 		axios.post('/api/transaction', data).then(x => {
-			console.log(x)
+			console.log(Map(x.data.transaksi))
+
+			self.props.tambahTransaksi(x.data.transaksi)
 		})
 
 	}
@@ -84,8 +90,6 @@ class AddTransaksi extends React.Component {
 
 				})
 
-
-				console.log(res)
 
 				if (stateQuantity > res.quantity) {
 
@@ -177,5 +181,5 @@ class AddTransaksi extends React.Component {
 
 export default connect(
   state => ({ product: state.product, supplier: state.suppliers }),
-  {  }
+  { tambahTransaksi  }
 )(AddTransaksi)

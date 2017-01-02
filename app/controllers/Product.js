@@ -63,8 +63,10 @@ class Product {
 
 		const createTrans = function (productID, SupplierID)  {
 
+			const code = Math.floor(Math.random()*90000) + 10000
+
 			const trans = new TransactionSchema({
-				code: 111,
+				code,
 				type: 1, // 1 Masuk, 2 => Keluar
 				note: "Stock Awal",
 				quantity: req.body.quantity,
@@ -82,8 +84,6 @@ class Product {
 
 		productSchema.save().then(function(param){
 			createTrans(param._id, req.body.supplier)
-			/*param.populate('supplier', function(err) {
-			})*/
 		})
 	}
 

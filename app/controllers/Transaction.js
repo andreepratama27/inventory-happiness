@@ -58,14 +58,13 @@ class Transaction {
 
 			ProductSchema.findById(req.body.product, function(err, product){
 
-
-				if (parseInt(req.body.quantity) === 1) {
+				if (parseInt(req.body.type) === 1) {
 					
-					product.quantity -= req.body.quantity
+					product.quantity += req.body.quantity
 
 				} else {
 					
-					product.quantity += req.body.quantity
+					product.quantity -= req.body.quantity
 				}
 
 				product.save().then(function(){
