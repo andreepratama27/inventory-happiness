@@ -10,17 +10,15 @@ services:
 cache: yarn
 env:
   - DBTRAVIS=travis
-
+  - CXX=g++-4.8
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - gcc-5
-    - g++-5
+    - g++-4.8
 
 before_script:
-  - sleep 5
   - yarn
   - mongo imk --eval 'db.hostInfo()'
   - npm install -g gulp
