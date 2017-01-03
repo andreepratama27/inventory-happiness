@@ -48,6 +48,7 @@ class TableListProduct extends React.Component {
 			            <th>Last Update</th>
 			            <th></th>
 			            <th></th>
+			            <th></th>
 			          </tr>
 			        </thead>
 		    		<tbody>
@@ -58,6 +59,11 @@ class TableListProduct extends React.Component {
 			    					<td>{t.quantity}</td>
 			    					<td>{t.supplier.name}</td>
 			    					<td>{formatTanggal(t.created_at)}</td>
+			    					<td>
+			    						<Link to={`/product/` + t._id + "/transactions"}>
+								    		<button className="antd-button-danger no-border">Lihat Transaksi</button>
+								    	</Link>
+			    					</td>
 			    					<td>
 										<Link to={`/product/edit/` + t._id}>
 								    		<button className="antd-button-danger no-border">Edit</button>

@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import moment from 'moment'
 
+import { List, Map, OrderedMap } from 'immutable';
+
 
 class TableTransaksi extends React.Component {
 
@@ -18,6 +20,16 @@ class TableTransaksi extends React.Component {
 		const hapus = x => {
 
 			console.log(x)
+		}
+
+		const urutkan = () => {
+
+			var newOrderedMap = List(this.props.todos);
+			var olderClients = newOrderedMap.sortBy(function(value, key) {  
+			    return -moment(value.created_at,moment.ISO_8601).unix();
+			});
+
+			return olderClients
 		}
 		return (
 			<div className="table-list">
@@ -36,7 +48,7 @@ class TableTransaksi extends React.Component {
 			          </tr>
 			        </thead>
 		    		<tbody>
-		    			{this.props.todos.map( t => {
+		    			{urutkan().map( t => {
 		    				return (
 		    					<tr key={t._id}>
 		    						<td>{t.code}</td>

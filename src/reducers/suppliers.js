@@ -8,6 +8,9 @@ export default function update(todos = init, action) {
   switch (action.type) {
   	case INITIAL_SUPPLIER:
   		return todos = action.payload;
+  	case ADD_SUPPLIER:
+  		todos.push(action.payload)
+  		return todos
     default:
       return todos;
   }

@@ -1,17 +1,17 @@
 import React from 'react'
+import axios from 'axios'
+import { connect } from 'react-redux';
 
+import { createSupplier } from 'actions/suppliers'
 
-
-export default class CreateSupplier extends React.Component {
+class CreateSupplier extends React.Component {
 
 
 	constructor() {
 		super()
 		this.state = {
 			code: '',
-			name:'',
-			alamat: '',
-			phone: ''
+			name:''
 		}
 	}
 
@@ -22,12 +22,18 @@ export default class CreateSupplier extends React.Component {
 		this.setState({name: e.target.value})
 	}
 
-	handleAlamatChange(e) {
-		this.setState({alamat: e.target.value})
-	}
+	saveSupplier (e) {
 
-	handlePhoneChange(e) {
-		this.setState({phone: e.target.value})
+		const data = {
+			code: this.state.code,
+			name: this.state.name
+		}
+
+		const self = this
+		axios.post('/api/suppliers', data).then(x => {
+
+			this.props.createSupplier(x.data)
+		})
 	}
 
 
@@ -48,31 +54,21 @@ export default class CreateSupplier extends React.Component {
 
 					<div className="form-group">
 						<label>Nama</label>
-						<input type="text" placeholder="PT Kereta API" className="form-control no-border" 
+						<input type="text" placeholder="PT Kereta API" 
+							className="form-control no-border" 
 							value={this.state.name} 
 							onChange={this.handleNameChange.bind(this)}/>
 					</div>
 
-
 					<div className="form-group">
-						<label>Alamat</label>
-						<input type="text" placeholder="Jl. Thamrin No.33" className="form-control no-border" 
-							value={this.state.alamat} 
-							onChange={this.handleAlamatChange.bind(this)}/>
-					</div>
-
-					<div className="form-group">
-						<label>Phone</label>
-						<input type="text" placeholder="+628xxxxxx" className="form-control no-border" 
-							value={this.state.phone} 
-							onChange={this.handlePhoneChange.bind(this)}/>
-					</div>
-
-					<div className="form-group">
-						<button type="button" className="btn btn-primary no-border">Simpan</button>
+						<button type="button" className="btn btn-primary no-border"
+							onClick={this.saveSupplier.bind(this)}>Simpan</button>
 					</div>
 
 				</div>
 			)
 	}
 }
+
+
+export default connect(state => ({ suppliers: state.suppliers }), { createSupplier })(CreateSupplier);

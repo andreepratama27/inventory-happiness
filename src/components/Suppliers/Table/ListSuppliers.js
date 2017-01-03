@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 //import { addproduct, decrease, deleteProduct } from '../../actions/product'
 import moment from 'moment'
 import axios from 'axios'
+import { List, Map, OrderedMap } from 'immutable';
 
 import { Link } from 'react-router'
 
@@ -27,6 +28,17 @@ class ListSuppliers extends React.Component {
 		const formatTanggal = x => {
 			return moment(x,moment.ISO_8601).format('DD MMM YYYY H:m:s')
 		}
+
+		const urutkan = () => {
+
+			var newOrderedMap = List(this.props.todos);
+			var olderClients = newOrderedMap.sortBy(function(value, key) {  
+				// console.log(moment(value.created_at,moment.ISO_8601).unix())
+			    return value.name;
+			});
+
+			return olderClients
+		}
 		return (
 			<div>
 		    	<Link to={`/suppliers/create`}>
@@ -42,7 +54,7 @@ class ListSuppliers extends React.Component {
 			          </tr>
 			        </thead>
 		    		<tbody>
-			    		{this.props.todos.map(t => {
+			    		{urutkan().map(t => {
 			    			return (<tr key={t._id}>
 			    					<td>{t.code}</td>
 			    					<td>{t.name}</td>

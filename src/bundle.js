@@ -23,6 +23,7 @@ import AddSuppliers from './scenes/AddSuppliers'
 import ListSuppliers from './scenes/ListSuppliers'
 import ListTransaksi from './scenes/ListTransaksi'
 import AddTransaksi from './scenes/AddTransaksi'
+import DetailProductTransactions from './scenes/DetailProductTransactions'
 
 
 const reducer = combineReducers({ ...reducerCollection,
@@ -68,6 +69,7 @@ class RouterHome extends React.Component {
           <Route path="/suppliers" component={ListSuppliers} />
           <Route path="/suppliers/create" component={AddSuppliers} />
           <Route path="/transaksi" component={ListTransaksi} />
+          <Route path="/product/:id/transactions" component={DetailProductTransactions} />
           <Route path="/transaksi/create" component={AddTransaksi} />
         </Router>
       </Provider>

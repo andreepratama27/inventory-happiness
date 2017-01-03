@@ -44,3 +44,20 @@ div.table-list {
 	color:red;
 	font-weight: bold;
 }
+
+
+td.quantityField {
+	
+	text-align: right;
+
+	& .stock-out {
+		padding: 0.8rem;
+		background: red;
+		text-align: right;
+	}
+
+	& .stock-in {
+		padding: 0.8rem;
+		text-align: right;
+	}
+}
